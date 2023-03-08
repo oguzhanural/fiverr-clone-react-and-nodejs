@@ -1,14 +1,21 @@
 import React from 'react'
 import Featured from '../../components/featured/Featured'
+import FreelancersSlide from '../../components/freelancersSlide/FreelancersSlide'
 import Slide from '../../components/Slide/Slide'
 import TrustedBy from '../../components/trustedBy/TrustedBy'
 import "./Home.scss"
+
 
 const Home = () => {
   return (
     <div className='home'>
       <Featured />
       <TrustedBy/>
+      <div className="popular-services-text">
+        <h2>
+        Popular professional services
+        </h2>
+      </div>
       <Slide/>
       <div className="features">
         <div className="container">
@@ -92,8 +99,16 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="freelancer-slide-text">
+        <h2>
+        Get inspired with projects made by our freelancers
+        </h2>
+      </div>
+      <FreelancersSlide/>
+      
     </div>
-  )
-}
+
+  );
+};
 
 export default Home

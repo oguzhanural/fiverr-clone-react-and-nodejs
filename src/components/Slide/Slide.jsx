@@ -3,7 +3,7 @@ import "./Slide.scss";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {cards} from "../../data";
-import CategoryCard from '../categoryCard/categoryCard';
+import CategoryCard from '../categoryCard/CategoryCard';
 
 
 const Slide = () => {
