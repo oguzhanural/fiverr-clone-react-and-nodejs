@@ -146,4 +146,79 @@ export const projects = [
         username: "fernandobengua",
     }
 ];
+
+export const gigs = [
+    {
+        id: 1,
+        img: "https://img.freepik.com/free-vector/sphere-grid-wave-with-binary-code-ai-artificial-intelligence-logo-hand-machine-learning-concept_127544-855.jpg?w=2000&t=st=1678543424~exp=1678544024~hmac=26ebac7088635487341a318cd2f465b0ffbe276147fd8f2fc32c50bfcb988f56",
+        pp: "https://img.freepik.com/free-photo/attractive-eastern-woman-covers-head-with-white-headscarf-guard-her-dignity-power-has-special-dress-code-keeps-hands-crossed-looks-with-modesty-poses-purple-wall-islamic-rules_273609-26323.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph",
+        username: "skydesigner",
+        desc: "I will create an illustration from any crazy idea with ai",
+        star: 5,
+        price:112,
+    },
+    {
+        id: 2,
+        img: "https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124680.jpg?w=2000&t=st=1678543460~exp=1678544060~hmac=ee96d4c081e1eea4bcc1ebafb07e02e6a16382baa200a5b27320de6376ed3ff9",
+        pp: "https://img.freepik.com/free-photo/portrait-cute-happy-girl-smiling-touching-her-curly-red-hair_176420-9241.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph",
+        username: "bruno_malagrino",
+        desc: "I will create mesmerizing ai generated concept art with midjourney",
+        star: 5,
+        price: 30,
+    },
+    {
+        id: 3,
+        img: "https://img.freepik.com/premium-vector/graphic-design-concept-isometric-illustration-with-tablet-abstract-designer_272153-182.jpg?w=1800",
+        pp: "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph",
+        username: "passionshake",
+        desc: "I will do modern minimalist logo design",
+        star: 5,
+        price: 20,
+    },
+    {
+        id: 4,
+        img: "https://fiverr-res.cloudinary.com/video/upload/so_17.143276,t_gig_cards_web/w7guqgfkkbuzye2bzjwe.png",
+        pp: "https://img.freepik.com/free-photo/selfie-portrait-videocall_23-2149186162.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=ais",
+        username: "eveeelin",
+        desc: "I will create an illustration from any crazy idea with ai",
+        star: 5,
+        price: 97,
+    },
+    {
+        id: 5,
+        img: "https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/ktwnithzbo8vrrz9d0xr.png",
+        pp: "https://img.freepik.com/free-photo/close-up-shot-pretty-woman-with-perfect-teeth-dark-clean-skin-having-rest-indoors-smiling-happily-after-received-good-positive-news_273609-1248.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph",
+        username: "annapietrangeli",
+        desc: "I will create an illustration from any crazy idea with ai",
+        star: 5,
+        price: 50,
+    },
+    {
+        id: 6,
+        img: "https://img.freepik.com/premium-vector/isometric-concept-theme-404-error-with-laptop_272153-159.jpg?w=1800",
+        pp: "https://img.freepik.com/free-photo/headshot-cute-emotional-caucasian-girl-with-hair-knot-having-rest-cafe_273609-9038.jpg?size=626&ext=jpg&ga=GA1.1.1067247315.1677148623&semt=ais",
+        username: "noneyn",
+        desc: "I will create an illustration from any crazy idea with ai",
+        star: 5,
+        price: 45,
+    },
+    {
+        id: 7,
+        img: "https://img.freepik.com/free-vector/podcast-radio-station-concept-illustration_52683-51719.jpg?w=2000&t=st=1678543772~exp=1678544372~hmac=ee09ffe0538d4549038e43575a0f43dcd44a5ffdae2203477936f9dd8f7c842d",
+        pp: "https://img.freepik.com/free-photo/attractive-eastern-woman-covers-head-with-white-headscarf-guard-her-dignity-power-has-special-dress-code-keeps-hands-crossed-looks-with-modesty-poses-purple-wall-islamic-rules_273609-26323.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph",
+        username: "mijalzagier",
+        desc: "I will create an illustration from any crazy idea with ai",
+        star: 5,
+        price: 120,
+    },
+    {
+        id: 8,
+        img: "https://img.freepik.com/free-photo/microphone-acoustic-isolation-foam_23-2148695273.jpg?w=1800&t=st=1678543814~exp=1678544414~hmac=f9825f7d64a320eb4b25c89583fae19030a3b775a9d486d84377f63eb7cfb9e2",
+        pp: "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph",
+        username: "fernandobengua",
+        desc: "I will create an illustration from any crazy idea with ai",
+        star: 5,
+        price: 70,
+    }
+];
     
