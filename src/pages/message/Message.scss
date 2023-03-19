@@ -1,0 +1,41 @@
+.message{
+    display: flex;
+    justify-content: center;
+
+    .message-page-container{
+        width: 1200px;
+        margin: 50px;
+
+        .message-page-messages{
+            display: flex;
+            // align-items: center;
+
+            .message-page-item{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .message-page-user-image{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                p{
+                    width: 600px;
+                }
+
+            }
+        }
+        
+
+        .message-page-breadcrumbs{
+            a{
+                font-weight: 300;
+                color: #446ee7;
+            }
+        }
+
+        
+    }
+}
