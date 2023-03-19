@@ -93,9 +93,9 @@ const Footer = () => {
               <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="" />
             </div>
             <div className="link">
-              <img src="./img/language.png" alt="" />
+              <img src="https://cdn-icons-png.flaticon.com/512/1239/1239345.png?w=1380&t=st=1678777544~exp=1678778144~hmac=0f98948c548ed0530e54223de02ff0f77e92da8b144a4793f853595d80d361f4" alt="" />
               <span>English</span>
-              <img src="./img/coin.png" alt="" />
+              <img src="https://cdn-icons-png.flaticon.com/512/991/991952.png?w=1380&t=st=1678819115~exp=1678819715~hmac=65cbf352a777ca423877e2e6388d8a6356b5289e7eb2d86af67bfee4040dfa29" alt="" />
             <span>USD</span>
             </div>
             

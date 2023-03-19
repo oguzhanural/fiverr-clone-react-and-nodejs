@@ -14,14 +14,14 @@ const Gig = () => {
             <h1>I will created AI generated art for you</h1>
             <div className="user">
               <img className='userPicture' src="https://img.freepik.com/free-photo/portrait-cute-happy-girl-smiling-touching-her-curly-red-hair_176420-9241.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph" alt="" />
-              <span>itsjason</span>
+              <span className='gig-page-username-up'>itsjason</span>
               <div className="stars">
                 <img src="/img/star.png" alt="" />
                 <img src="/img/star.png" alt="" />
                 <img src="/img/star.png" alt="" />
                 <img src="/img/star.png" alt="" />
                 <img src="/img/star.png" alt="" />
-                <span>5</span>
+                <span className='star-size'>5</span>
                 </div> 
             </div>
             <GigSlider />
@@ -73,6 +73,70 @@ const Gig = () => {
                 to bring your favorite characters to life. With fast turnaround times,
                 affordable prices, and exceptional quality. Order now and see the magic unfold!
               </p>
+              </div>
+              
+            </div>
+            <div className="gig-page-reviews">
+              <div className="gig-page-reviews-item">
+                <div className="gig-page-reviews-user">
+                  <img src="https://img.freepik.com/free-photo/headshot-cute-emotional-caucasian-girl-with-hair-knot-having-rest-cafe_273609-9038.jpg?size=626&ext=jpg&ga=GA1.1.1067247315.1677148623&semt=ais" alt="" />
+                  <div className="gig-page-reviews-info">
+                    <span>ballen1482</span>
+                    <div className="gig-page-reviews-user-country">
+                      <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f9-1f1f7.png" alt="" />
+                      <span>Türkiye</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="stars">
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <span>5</span>
+                </div>
+                <p>Working with Jason was something incredible,
+                  it's like he got inside my head and perfectly understood what I wanted.
+                  Work done to perfection, a true PROFESSIONAL</p>
+                  <div className="gig-page-reviews-helpful">
+                    <span>Helpful?</span>
+                    <span>Yes</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" alt="" />
+                    <span>No</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/15/15107.png?w=1380&t=st=1678821099~exp=1678821699~hmac=045223895a9a31890b1393ed7527b189aa4c247c4882ec1565997fcaed1dff60" alt="" />
+                  </div>
+              </div>
+              <hr />
+              <div className="gig-page-reviews-item">
+                <div className="gig-page-reviews-user">
+                  <img src="https://img.freepik.com/free-photo/headshot-cute-emotional-caucasian-girl-with-hair-knot-having-rest-cafe_273609-9038.jpg?size=626&ext=jpg&ga=GA1.1.1067247315.1677148623&semt=ais" alt="" />
+                  <div className="gig-page-reviews-info">
+                    <span>ballen1482</span>
+                    <div className="gig-page-reviews-user-country">
+                      <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f9-1f1f7.png" alt="" />
+                      <span>Türkiye</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="stars">
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <img src="/img/star.png" alt="" />
+                  <span>5</span>
+                </div>
+                <p>Working with Jason was something incredible,
+                  it's like he got inside my head and perfectly understood what I wanted.
+                  Work done to perfection, a true PROFESSIONAL</p>
+                  <div className="gig-page-reviews-helpful">
+                    <span>Helpful?</span>
+                    <span>Yes</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" alt="" />
+                    <span>No</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/15/15107.png?w=1380&t=st=1678821099~exp=1678821699~hmac=045223895a9a31890b1393ed7527b189aa4c247c4882ec1565997fcaed1dff60" alt="" />
+                  </div>
               </div>
               
             </div>
