@@ -26,6 +26,7 @@
             .user{
                 display: flex;
                 align-items: center;
+               
 
                 .gig-page-username-up{
                     margin: 0px 11px 11px 0px;
@@ -61,8 +62,13 @@
                 }
                 
             }
+            .lorem-p{
+                width: 600px;
+                font-size: 18px;
+                font-weight: 400;
+            }
             h2{
-                padding-bottom: 15px;
+                padding: 15px 0px 15px 0px;
             }
             .seller-section{
                 display: flex;
@@ -280,6 +286,7 @@
         }
         .right{
             flex: 1;
+            margin-right: 20px;
             .gig-page-container{
                 // display: flex;
                 // flex-direction: column;

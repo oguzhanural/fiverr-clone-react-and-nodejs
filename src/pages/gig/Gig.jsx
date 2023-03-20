@@ -26,7 +26,7 @@ const Gig = () => {
             </div>
             <GigSlider />
             <h2>About This Gig</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, neque? Veritatis suscipit, porro fuga vero rerum molestias? Minus assumenda nemo adipisci saepe incidunt a, esse cum, dicta mollitia facere sapiente?</p>
+            <p className='lorem-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, neque? Veritatis suscipit, porro fuga vero rerum molestias? Minus assumenda nemo adipisci saepe incidunt a, esse cum, dicta mollitia facere sapiente?</p>
             <h2>About The Seller</h2>
             <div className="seller-section">
               <div className="seller-user-pictures">
