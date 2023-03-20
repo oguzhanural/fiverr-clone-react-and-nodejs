@@ -280,6 +280,95 @@
         }
         .right{
             flex: 1;
+            .gig-page-container{
+                // display: flex;
+                // flex-direction: column;
+                border: 1px solid lightgray;
+                border-radius: 4px;
+                padding: 30px;
+
+               .gig-page-price{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 20px;
+               
+                }
+                .gig-slidebar-details-text{
+                    color: #74767e;
+                    padding-bottom: 20px;
+                }
+                .gig-page-sidebar-details{
+
+                    .gig-page-delivery-date{
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        padding: 20px 0px 20px 0px;
+
+                        span{
+                            font-weight: bold;
+                            color: #62646a;
+                            font-size: 14px;
+                          
+
+                        }
+                        img{
+                            width: 18px;
+                            height: 18px;
+
+                        }
+                    }
+                    .gig-sidebar-features{
+                        list-style: none;
+                        list-style-image: none;
+                        display: flex;
+                        flex-direction: column;
+                        // align-items: center;
+                        -webkit-box-align: center;
+                        padding-bottom: 20px;
+                       li{
+                        padding-bottom: 10px;
+                        display: flex;
+                        align-items: center;
+                       }
+                        img{
+                            width: 14px;
+                            height: 14px;
+                            margin-right: 8px;
+                           
+                        }
+                        span{
+                            color: #95979d;
+                            font-size: 14px;
+                        }
+                    }
+                    
+                }
+                .gig-page-sidebar-details-button{
+                    width: 100%;
+                    padding: 12px 24px;
+                    text-align: center;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 16px;
+                    background-color: #1dbf73;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: #12ae65;
+                        transition: 70ms cubic-bezier(.75,0,.25,1);
+                        color: white;
+                        border: 1px solid transparent;
+                    }
+                }
+                
+
+            }
+
+            
         }
     }
 }

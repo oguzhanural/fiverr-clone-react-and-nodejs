@@ -115,7 +115,44 @@ const Gig = () => {
             </div>
         </div>
         <div className="right">
-
+          <div className="gig-page-container">
+              <div className="gig-page-price">
+                <h3>AI Generated Image</h3>
+                <h3>€53.94</h3>
+                
+            </div>
+            <p className='gig-slidebar-details-text'>2 Variation Images to explore your concept. [Portrait] High upscale included</p>
+            <div className="gig-page-sidebar-details">
+              <div className="gig-page-delivery-date">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="" />
+                <span>5 Days Delivery</span>
+              </div>
+              <ul className='gig-sidebar-features'>
+                <li>
+                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
+                  <span>Prompt writing</span>
+                </li>
+                <li>
+                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
+                  <span>Prompt delivery</span>
+                </li>
+                <li>
+                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
+                  <span>Generated image examples</span>
+                </li>
+                <li>
+                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
+                  <span>Artwork delivery</span>
+                </li>
+                <li>
+                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
+                  <span>Image upscaling</span>
+                </li>
+              </ul>
+            </div>
+            <button className='gig-page-sidebar-details-button'>Continue</button>
+          </div>
+          
         </div>
       </div>
     </div>
