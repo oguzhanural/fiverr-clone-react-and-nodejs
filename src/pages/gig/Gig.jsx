@@ -79,7 +79,7 @@ const Gig = () => {
             <div className="gig-page-reviews">
               <div className="gig-page-reviews-item">
                 <div className="gig-page-reviews-user">
-                  <img src="https://img.freepik.com/free-photo/headshot-cute-emotional-caucasian-girl-with-hair-knot-having-rest-cafe_273609-9038.jpg?size=626&ext=jpg&ga=GA1.1.1067247315.1677148623&semt=ais" alt="" />
+                  <img className='gig-page-reviews-user-pic' src="https://img.freepik.com/free-photo/headshot-cute-emotional-caucasian-girl-with-hair-knot-having-rest-cafe_273609-9038.jpg?size=626&ext=jpg&ga=GA1.1.1067247315.1677148623&semt=ais" alt="" />
                   <div className="gig-page-reviews-info">
                     <span>ballen1482</span>
                     <div className="gig-page-reviews-user-country">
