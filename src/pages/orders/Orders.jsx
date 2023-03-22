@@ -11,7 +11,7 @@ const Orders = () => {
   };
 
   return (
-    <div className='orders-page'>
+    
      <div className='orders-page'>
       <div className="orders-page-container">
         <div className="orders-page-title">
@@ -83,7 +83,7 @@ const Orders = () => {
         </table>
       </div>
     </div>
-    </div>
+    
   )
 }
 
