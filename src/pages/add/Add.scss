@@ -1,0 +1,93 @@
+.add-page{
+    display: flex;
+    justify-content: center ;
+
+    .add-page-container{
+        width: 1400px;
+        padding: 50px 32px 50px 32px;
+
+        h1{
+            color: #404145;
+            font-weight: 300;
+            margin-bottom: 30px;
+
+        }
+
+        .add-page-sections{
+             display: flex;
+             justify-content: space-between;
+             gap: 100px;
+
+            .add-page-left{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 10px;
+                width: 100%; 
+                // width: 600px;
+
+                label{
+                    color: #404145;
+                    font-size: 18px;
+                }
+                input{
+                    padding: 15px; 
+                }
+
+                textarea{
+                    padding: 15px;
+                }
+
+                select{
+                    padding: 15px;
+                }
+                button{
+                    padding: 12px 24px;
+                    text-align: center;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 16px;
+                    background-color: #1dbf73;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: #12ae65;
+                        transition: 70ms cubic-bezier(.75,0,.25,1);
+                        color: white;
+                        border: 1px solid transparent;
+                    }
+                }
+
+            }
+            .add-page-right{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 10px;
+                width: 100%; 
+                // width: 600px;
+
+                label{
+                    color: #404145;
+                    font-size: 18px;
+                }
+                input{
+                    padding: 15px; 
+                }
+
+                textarea{
+                    padding: 15px;
+                }
+
+                select{
+                    padding: 15px;
+                }
+
+            }
+
+        }
+
+    }
+}
