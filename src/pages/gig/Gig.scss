@@ -307,25 +307,50 @@
                 }
                 .gig-page-sidebar-details{
 
-                    .gig-page-delivery-date{
+                    .delivery-revisions-date{
                         display: flex;
-                        align-items: center;
-                        gap: 6px;
-                        padding: 20px 0px 20px 0px;
-
-                        span{
-                            font-weight: bold;
-                            color: #62646a;
-                            font-size: 14px;
-                          
-
+                        justify-content: space-between;
+                        .gig-page-delivery-date{
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+                            padding: 20px 0px 20px 0px;
+    
+                            span{
+                                font-weight: bold;
+                                color: #62646a;
+                                font-size: 14px;
+                              
+    
+                            }
+                            img{
+                                width: 18px;
+                                height: 18px;
+    
+                            }
                         }
-                        img{
-                            width: 18px;
-                            height: 18px;
-
+                        .gig-page-revisions-date{
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+                            padding: 20px 0px 20px 0px;
+                            span{
+                                font-weight: bold;
+                                color: #62646a;
+                                font-size: 14px;
+                              
+    
+                            }
+                            img{
+                                width: 20px;
+                                height: 20px;
+    
+                            }
+    
                         }
+
                     }
+
                     .gig-sidebar-features{
                         list-style: none;
                         list-style-image: none;

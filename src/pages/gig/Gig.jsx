@@ -123,9 +123,16 @@ const Gig = () => {
             </div>
             <p className='gig-slidebar-details-text'>2 Variation Images to explore your concept. [Portrait] High upscale included</p>
             <div className="gig-page-sidebar-details">
+              <div className="delivery-revisions-date">
               <div className="gig-page-delivery-date">
                 <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="" />
                 <span>5 Days Delivery</span>
+              </div>
+              <div className="gig-page-revisions-date">
+                <img src="https://cdn-icons-png.flaticon.com/512/7204/7204779.png" alt="" />
+                <span>3 Revisions</span>
+              </div>
+
               </div>
               <ul className='gig-sidebar-features'>
                 <li>
