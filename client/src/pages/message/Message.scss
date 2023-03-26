@@ -1,0 +1,113 @@
+.message{
+    display: flex;
+    justify-content: center;
+
+    .message-page-container{
+        width: 1200px;
+        margin: 50px;
+
+        .message-page-breadcrumbs{
+            a{
+                font-weight: 300;
+                color: #446ee7;
+            }
+        }
+
+        .message-page-messages{
+            display: flex;
+            // align-items: center;
+            margin: 30px 0px;
+            padding: 50px;
+            flex-direction: column;
+            gap: 25px;
+            height: 500px;
+            overflow: scroll ;
+
+            .message-page-item{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                max-width: 600px;
+                font-size: 18px;
+
+                &.owner{
+                    flex-direction: row-reverse;
+                    align-self: flex-end;
+                    
+                    p{
+                        border-radius: 20px 0px 20px 20px;
+                        background-color: #0faf64;
+                        color: white;
+                        
+                    }
+                }
+
+                
+                .message-page-user-image{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                p{
+                    padding: 20px;
+                    background-color: rgb(26, 102, 209);
+                    border-radius: 0px 20px 20px 20px;
+                    color: white;
+                    font-weight: 300;
+                }
+
+            }
+        }
+        hr{
+            height: 0;
+            border: 0.5px solid lightgray;
+        }
+
+        .message-page-message-write{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+
+            textarea{
+                width: 90%;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid rgb(227, 225, 225);
+                border-radius: 6px;
+                outline-style: none;
+                
+            }
+
+            button{
+                        padding: 10px 20px;
+                        text-align: center;
+                        color: white;
+                        background-color: #1dbf73;
+                        border: 1px solid transparent;
+                        border-radius: 4px;
+                        font-weight: 500;
+                        font-size: 15px;
+                        transition: 70ms cubic-bezier(.15,0,.25,1);
+                        cursor: pointer;
+                        
+                        
+                        &:hover{
+                            background-color: #10aa62;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                            color: white;
+                            
+                        }
+            }
+
+        }
+        
+
+        
+
+        
+    }
+}
