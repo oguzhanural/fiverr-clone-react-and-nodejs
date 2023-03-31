@@ -32,7 +32,8 @@ export const login = async (req,res) => {
             id: user._id,
             isSeller: user.isSeller,
         },
-        process.env.JWT_KEY
+        process.env.JWT_KEY,
+        {expiresIn: "1h"}
         );
 
         const {password, ...info} = user._doc;
