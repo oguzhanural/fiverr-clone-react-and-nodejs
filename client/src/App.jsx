@@ -8,8 +8,10 @@ import MyGigs from "./pages/myGigs/MyGigs";
 import Add from "./pages/add/Add";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
+import Login from "./pages/login/Login";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import "./app.scss";
+
 
 function App() {
   const Layout = () => {
@@ -34,6 +36,10 @@ function App() {
         {
           path: "/gigs",
           element: <Gigs/>
+        },
+        {
+          path: "/login",
+          element: <Login/>
         },
         {
           path: "/gig/:id",

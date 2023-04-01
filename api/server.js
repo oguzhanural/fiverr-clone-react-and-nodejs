@@ -9,6 +9,7 @@ import userRoute from "./routes/user.route.js";
 // import conversationRoute from "./routes/conversation.route.js";
 import authRoute from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 
 const app = express();
@@ -25,6 +26,7 @@ const connect = async () => {
 };
 
 app.use(express.json()); //first middleware
+app.use(cors({origin:"http://localhost:5174", credentials: true}));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoute);
@@ -34,6 +36,12 @@ app.use("/api/users", userRoute);
 // app.use("api/conversations", conversationRoute);
 // app.use("api/messages", messageRoute);
 // app.use("api/reviews", reviewRoute);
+
+app.use((error,req,res,next)=>{
+    const errorStatus = error.status || 500;
+    const errorMessage = error.message || "Something went wrong!";
+    return res.status(errorStatus).send(errorMessage);
+});
 
 app.listen(8800, () => {
     connect();
