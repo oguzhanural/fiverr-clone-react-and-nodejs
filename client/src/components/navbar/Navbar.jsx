@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import newRequest from '../../utils/newRequest';
 import "./Navbar.scss"
 
 
@@ -20,10 +21,18 @@ const Navbar = () => {
     };
   }, []);
 
-  const currentUser = {
-    id: 1,
-    username: "Kay Carlson",
-    isSeller: true
+  const navigate = useNavigate();
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const handleLogout = async () =>{
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.setItem("currentUser", null);
+      navigate("/");
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -44,7 +53,7 @@ const Navbar = () => {
                 {!currentUser && <button>Join</button>}
                 {currentUser && (
                   <div className="user" onClick={()=> setOpen(!open)}>
-                    <img src="https://img.freepik.com/free-vector/beautiful-floral-facebook-frame_23-2148958014.jpg?w=1380&t=st=1677148709~exp=1677149309~hmac=982b0598f91de67267c9cde9dea4537b5684d3d26c2a039adf277e34b640305f" alt="" />
+                    <img src={currentUser.img || "./public/img/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded.jpg"} alt="" />
                     <span>{currentUser?.username}</span>
                     {open &&<div className="options">
                       {
@@ -56,7 +65,7 @@ const Navbar = () => {
                       )}
                       <Link className='link' to="/orders">Orders</Link>
                       <Link className='link' to="messages">Messages</Link>
-                      <Link className='link' to="/">Logout</Link>
+                      <Link className='link' onClick={handleLogout}>Logout</Link>
                     </div>
                     }
                   </div>

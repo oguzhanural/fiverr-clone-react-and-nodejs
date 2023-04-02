@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Login.scss"
-import axios from "axios"
+// import axios from "axios"
 import newRequest from '../../utils/newRequest';
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const Login = () => {
     const res = await newRequest.post("auth/login", {username, password,});
     localStorage.setItem("currentUser", JSON.stringify(res.data));
     navigate("/");
-    
+
     console.log(res.data);
     } catch (error) {
       setError(error.response.data);
@@ -33,7 +33,7 @@ const Login = () => {
           <form action="" onSubmit={handleSubmit}>
           <h1>Sign In</h1>
           <label htmlFor="">Username</label>
-          <input name='username' type="text" placeholder='johndoe'
+          <input name='username' type="text" placeholder='oguzhan'
           onChange={e=>setUsername(e.target.value)}/>
           
           <label htmlFor="">Password</label>
