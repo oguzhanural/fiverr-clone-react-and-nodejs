@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import "./Register.scss"
+import upload from '../../utils/upload';
+import newRequest from '../../utils/newRequest';
+import { useNavigate } from "react-router-dom";
 
 
 const Register = () => {
@@ -8,12 +11,16 @@ const Register = () => {
   const [user, setUser] = useState({
     username: "",
     email: "",
+    phone: "",
     passaword: "",
     img: "",
     country: "",
     isSeller: false,
     desc: "",
   });
+
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setUser(prev =>{
@@ -26,12 +33,43 @@ const Register = () => {
       return {...prev, isSeller: e.target.checked};
     });
   };
-  console.log(user);
+
+  const handleSubmit = async(e) => {
+
+    e.preventDefault();
+    const url = await upload(file);
+
+    try {
+      await newRequest.post("/auth/register",{
+        ...user,
+        img: url
+      });
+      console.log(user);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
+
+  // const upload = async (file) => {
+  //   // firstly convert form data
+  //   const data = new FormData();
+  //   data.append("file",file);
+  //   data.append("upload_preset", "fiverr")
+  //   try {
+  //     const res = await axios.post("api.cloudinary bla bla.." ,data)
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // console.log(user);
 
   return (
     <div className='register-page'>
       <div className="register-page-container">
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div className="left">
             <h1>Create a New Account</h1>
             <label htmlFor="">Username</label>
@@ -60,7 +98,7 @@ const Register = () => {
             </div>
           </div>
           <label htmlFor="">Phone Number</label>
-          <input type="text" name=' ' placeholder='5554443322' onChange={handleChange}/>
+          <input type="text" name="phone" placeholder='5554443322' onChange={handleChange}/>
           <label htmlFor="">Description</label>
           <textarea name="desc" id="" cols="30" rows="12" onChange={handleChange}></textarea>
 
