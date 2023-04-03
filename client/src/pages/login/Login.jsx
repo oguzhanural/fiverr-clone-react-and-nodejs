@@ -33,11 +33,11 @@ const Login = () => {
           <form action="" onSubmit={handleSubmit}>
           <h1>Sign In</h1>
           <label htmlFor="">Username</label>
-          <input name='username' type="text" placeholder='oguzhan'
+          <input name='username' type="text" placeholder='Username'
           onChange={e=>setUsername(e.target.value)}/>
           
           <label htmlFor="">Password</label>
-          <input name='password' type='password'
+          <input name='password' type='password' placeholder='Password'
           onChange={e=>setPassword(e.target.value)}/>
 
           <button type='submit'>Login</button>

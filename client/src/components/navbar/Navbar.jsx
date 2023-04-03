@@ -53,7 +53,7 @@ const Navbar = () => {
                 {!currentUser && <button>Join</button>}
                 {currentUser && (
                   <div className="user" onClick={()=> setOpen(!open)}>
-                    <img src={currentUser.img || "./public/img/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded.jpg"} alt="" />
+                    <img src={currentUser.img || "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=2000&t=st=1680464902~exp=1680465502~hmac=76dc551683f3d98f7714c2b5087b6e5b1691c40a0cd8ff2e6d96daa11d86a08d" } alt="" />
                     <span>{currentUser?.username}</span>
                     {open &&<div className="options">
                       {
