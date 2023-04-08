@@ -6,6 +6,22 @@ const gigSchema = new Schema({
         type: String,
         required: true,
     },
+    username: {
+        type: String,
+        required: true,
+    },
+    img: {
+        type: String,
+        required: true,
+    },
+    pp: {
+        type: String,
+        required: true,
+    },
+    star: {
+        type: Number,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
