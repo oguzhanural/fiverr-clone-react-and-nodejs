@@ -19,7 +19,7 @@ const GigCard = ({item}) => {
       // console.log(data);
 
   return (
-    <Link to="/gig/123" className='link'>
+    <Link to={`/gig/${item._id}`} className='link'>
     
     <div className='gigCard'>
         <img src={item.coverImg} alt="" />

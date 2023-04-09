@@ -2,16 +2,34 @@ import React from 'react'
 import GigSlider from '../../components/gigSlider/GigSlider'
 // import Slide from '../../components/Slide/Slide'
 import { gigSliderData } from '../../data'
+import { useParams } from "react-router-dom"
 import "./Gig.scss"
+import { useQuery } from '@tanstack/react-query'
+import newRequest from '../../utils/newRequest'
 
 const Gig = () => {
+
+  const {id} = useParams();
+  const { isLoading, error, data, refetch } = useQuery({
+    queryKey: ['gig'],
+    queryFn: () =>
+      newRequest.get(
+        `/gigs/single/${id}`)
+        .then((res)=>{
+        return res.data;
+      }),
+  });
+  console.log(data);
+
   return (
     <div className='gig'>
+      {
+        isLoading ? "Loading..." : error ? "Something went wrong" :
       <div className="container">
         <div className="left">
         <span className="breadCrumbs">
             FIVERR {'>'} GRAPHICS DESIGN</span>
-            <h1>I will created AI generated art for you</h1>
+            <h1>{data.title}</h1>
             <div className="user">
               <img className='userPicture' src="https://img.freepik.com/free-photo/portrait-cute-happy-girl-smiling-touching-her-curly-red-hair_176420-9241.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph" alt="" />
               <span className='gig-page-username-up'>itsjason</span>
@@ -162,6 +180,7 @@ const Gig = () => {
           
         </div>
       </div>
+      }
     </div>
   )
 }

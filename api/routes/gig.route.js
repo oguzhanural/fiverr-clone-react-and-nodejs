@@ -6,7 +6,7 @@
 
  gigRouter.post("/", verifyToken, createGig);
  gigRouter.delete("/:id", verifyToken, deleteGig);
- gigRouter.get("/single/:id", verifyToken,getGig);
- gigRouter.get("/", verifyToken, getGigs);
+ gigRouter.get("/single/:id", getGig);
+ gigRouter.get("/", getGigs);
 
  export default gigRouter;
