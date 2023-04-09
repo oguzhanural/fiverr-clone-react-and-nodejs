@@ -1,18 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./GigCard.scss"
+import { useQuery } from '@tanstack/react-query';
+import newRequest from '../../utils/newRequest';
 
 const GigCard = ({item}) => {
+
+    const { isLoading, error, data } = useQuery({
+        queryKey: [`${item.userId}`],
+        queryFn: () =>
+          newRequest.get(
+                `users/${item.userId}`
+            )
+            .then((res)=>{
+            return res.data;
+          }),
+      });
+      // console.log(data);
+
   return (
     <Link to="/gig/123" className='link'>
     
     <div className='gigCard'>
-        <img src={item.img} alt="" />
+        <img src={item.coverImg} alt="" />
         <div className="info">
-            <div className="user">
-                <img src={item.pp} alt="" />
-                <span>{item.username}</span>
-            </div>
+            {isLoading ? (
+                "Loading..."
+                ) : error ? (
+                    "Something went wrong!"
+                    ) : (
+                <div className="user">
+                    <img src={data.img} alt="" />
+                    <span>{data.username}</span>
+                </div>)}
             <p>{item.desc}</p>
             <div className="star">
                 <img src="./img/star.png" alt="" />
@@ -24,7 +44,7 @@ const GigCard = ({item}) => {
             <img src="./img/heart.png" alt="" />
             <div className="price">
                 <span>STARTING AT</span>
-                <h2>{item.price}</h2>
+                <h2>$ {item.price}</h2>
             </div>
         </div>
     </div>
