@@ -17,6 +17,7 @@
             .breadCrumbs{
                 font-weight: 300;
                 font-size: 15px;
+                color: #02c2a9;
 
             }
             h1{
@@ -178,110 +179,7 @@
                 }
 
             }
-            .gig-page-reviews{
-                width: 600px;
-
-                .gig-page-reviews-item{
-                    margin-top: 20px;
-                    
-
-                    .gig-page-reviews-user{
-                        display: flex;
-
-                        .gig-page-reviews-info{
-                            display: flex;
-                            flex-direction: column;
-
-                            .gig-page-reviews-username{
-                                font-weight: bold;
-                                color: #404145;
-                                
-                            }
-
-                            .gig-page-reviews-user-country{
-                                display: flex;
-                                align-items: center;
-                                gap: 5px;
-
-                                .gig-page-reviews-country-name{
-                                    font-weight: 300;
-                                    color: #62646a;
-                                    font-size: 18px;
-                                }
-                                img{
-                                    width: 24px;
-                                    height: 24px;
-                                }
-                            }
-                        }
-                       
-
-                        .gig-page-reviews-user-pic{
-                            width: 50px;
-                            height: 50px;
-                            border-radius: 50%;
-                            object-fit: cover;
-                            margin-right: 20px;
-                           
-                        }
-
-                    }
-                    .stars{
-                        display: flex;
-                        align-items: center;
-                        margin-left: 70px;
-                        
-    
-                        img{
-                            width: 14px;
-                            height: 14px;
-                            object-fit: cover;
-                        }
-                        
-                        .star-size{
-                        font-size: 15px;
-                        margin-left: 5px;
-                        font-weight: 700;
-                        color: rgb(246, 150, 5);
-                    }
-                    .gig-page-reviews-date{
-                        font-size: 14px;
-                        line-height: 21px;
-                        color: #62646a;
-                    }
-                    .gig-page-seperate{
-                        margin: 0px 10px 0px 10px;
-                        color: #62646a;
-                    }
-                
-                    }
-                    p{
-                        padding-top: 20px;
-                        margin-left: 70px;
-
-                    }
-
-                    .gig-page-reviews-helpful{
-                        display: flex;
-                        align-items: center;
-                        margin-left: 70px;
-                        padding: 20px 0px 20px 0px;
-
-                        img{
-                            width: 15px;
-                            height: 15px;
-                            margin-right: 10px;
-                        }
-                        span{
-                            font-weight: bold;
-                            color: #404145;
-                            margin-right: 10px;
-                        }
-                    }
-
-                }
-               
-            }
+            
             
         }
         .right{

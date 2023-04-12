@@ -6,69 +6,102 @@ import { useParams } from "react-router-dom"
 import "./Gig.scss"
 import { useQuery } from '@tanstack/react-query'
 import newRequest from '../../utils/newRequest'
+import Reviews from '../../components/reviews/Reviews'
 
 const Gig = () => {
 
-  const {id} = useParams();
-  const { isLoading, error, data, refetch } = useQuery({
+  const { id } = useParams();
+  //console.log(id);
+
+  const { isLoading, error, data } = useQuery({
     queryKey: ['gig'],
-    queryFn: () =>
+    queryFn: () => 
       newRequest.get(
         `/gigs/single/${id}`)
         .then((res)=>{
         return res.data;
       }),
   });
-  console.log(data);
+   //console.log(data);
+
+   const { isLoading: isLoadingUser, error: errorUser, data: dataUser } = useQuery({
+    queryKey: ['user'],
+    queryFn: () => 
+      newRequest.get(
+        `/users/${data.userId}`)
+        .then((res)=>{
+        return res.data;
+      }),
+  });
 
   return (
     <div className='gig'>
       {
-        isLoading ? "Loading..." : error ? "Something went wrong" :
+        isLoading ? "Loading..." : error ? "Something went wrong"+error :
       <div className="container">
         <div className="left">
         <span className="breadCrumbs">
             FIVERR {'>'} GRAPHICS DESIGN</span>
             <h1>{data.title}</h1>
-            <div className="user">
-              <img className='userPicture' src="https://img.freepik.com/free-photo/portrait-cute-happy-girl-smiling-touching-her-curly-red-hair_176420-9241.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph" alt="" />
-              <span className='gig-page-username-up'>itsjason</span>
-              <div className="stars">
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <span className='star-size'>5</span>
-                </div> 
-            </div>
-            <GigSlider />
-            <h2>About This Gig</h2>
-            <p className='lorem-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, neque? Veritatis suscipit, porro fuga vero rerum molestias? Minus assumenda nemo adipisci saepe incidunt a, esse cum, dicta mollitia facere sapiente?</p>
-            <h2>About The Seller</h2>
-            <div className="seller-section">
-              <div className="seller-user-pictures">
-              <img src="https://img.freepik.com/free-photo/portrait-cute-happy-girl-smiling-touching-her-curly-red-hair_176420-9241.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph" alt="" />
-              </div>
-              <div className="seller-user">
-                <span>itsjason</span>
-                <p>Hi! I can help you with your art fantasy!</p>
+
+            {isLoadingUser? (
+              "Loading..."
+              ) : errorUser ? (
+                "Something went wrong! User error"
+                ) :(
+              <div className="user">
+                <img className='userPicture' src={dataUser.img} alt="" />
+                <span className='gig-page-username-up'>{dataUser.username}</span>
                 <div className="stars">
                   <img src="/img/star.png" alt="" />
                   <img src="/img/star.png" alt="" />
                   <img src="/img/star.png" alt="" />
                   <img src="/img/star.png" alt="" />
                   <img src="/img/star.png" alt="" />
-                  <span>5</span>
-                </div>
-                <button className=''>Contact Me</button>
-              </div>
+                  <span className='star-size'>5</span>
+                </div> 
             </div>
+            )}
+            
+            <GigSlider />
+            <h2>About This Gig</h2>
+            <p className='lorem-p'>{data.desc}</p>
+            <h2>About The Seller</h2>
+            {isLoadingUser? (
+              "Loading"
+              ) : errorUser ? (
+                "Something went wrong! User error"
+                ) :(
+              <div className="seller-section">
+                <div className="seller-user-pictures">
+                <img src="https://img.freepik.com/free-photo/portrait-cute-happy-girl-smiling-touching-her-curly-red-hair_176420-9241.jpg?size=626&ext=jpg&ga=GA1.2.1067247315.1677148623&semt=sph" alt="" />
+                </div>
+                <div className="seller-user">
+                  <span>{data.username}</span>
+                  <p>Hi! I can help you with your art fantasy!</p>
+                    <div className="stars">
+                      <img src="/img/star.png" alt="" />
+                      <img src="/img/star.png" alt="" />
+                      <img src="/img/star.png" alt="" />
+                      <img src="/img/star.png" alt="" />
+                      <img src="/img/star.png" alt="" />
+                      <span>5</span>
+                    </div>
+                  <button className=''>Contact Me</button>
+                </div>
+            </div>
+            )}
+            
+            {isLoadingUser? (
+              "Loading..."
+              ) : errorUser ? (
+                "Something went wrong! User error"
+                ) :(
             <div className="user-box-seller">
               <div className="user-box-items">
                  <ul className='user-stats'>
                   <li>From
-                    <strong>Netherlands</strong>
+                    <strong>{dataUser.country}</strong>
                   </li>
                   <li>Avg. response time
                     <strong>1 hour</strong>
@@ -85,52 +118,16 @@ const Gig = () => {
                  </ul>
                  <hr />
                  
-                 <p>Hey! I am an AI-powered art seller on Fiverr,
-                providing custom-made masterpieces that'll take your breath away.
-                From character portraits to fan art, I use the latest AI technology
-                to bring your favorite characters to life. With fast turnaround times,
-                affordable prices, and exceptional quality. Order now and see the magic unfold!
+                 <p>
+                  {dataUser.desc}
               </p>
               </div>
-              
             </div>
-            <div className="gig-page-reviews">
-              <div className="gig-page-reviews-item">
-                <div className="gig-page-reviews-user">
-                  <img className='gig-page-reviews-user-pic' src="https://img.freepik.com/free-photo/headshot-cute-emotional-caucasian-girl-with-hair-knot-having-rest-cafe_273609-9038.jpg?size=626&ext=jpg&ga=GA1.1.1067247315.1677148623&semt=ais" alt="" />
-                  <div className="gig-page-reviews-info">
-                    <span className='gig-page-reviews-username'>ballen1482</span>
-                    <div className="gig-page-reviews-user-country">
-                      <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f9-1f1f7.png" alt="" />
-                      <span className='gig-page-reviews-country-name'>Türkiye</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="stars">
-                  <img src="/img/star.png" alt="" />
-                  <img src="/img/star.png" alt="" />
-                  <img src="/img/star.png" alt="" />
-                  <img src="/img/star.png" alt="" />
-                  <img src="/img/star.png" alt="" />
-                  <span className='star-size'>5</span>
-                  <span className='gig-page-seperate'>|</span>
-                  <span className='gig-page-reviews-date'>1 week ago</span>
-                </div>
-                <p>Working with Jason was something incredible,
-                  it's like he got inside my head and perfectly understood what I wanted.
-                  Work done to perfection, a true PROFESSIONAL</p>
-                  <div className="gig-page-reviews-helpful">
-                    <span>Helpful?</span>
-                    <span>Yes</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" alt="" />
-                    <span>No</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/15/15107.png?w=1380&t=st=1678821099~exp=1678821699~hmac=045223895a9a31890b1393ed7527b189aa4c247c4882ec1565997fcaed1dff60" alt="" />
-                  </div>
-              </div>
-              <hr />
-             
-              
-            </div>
+            )}
+
+          {/* reviews component here */}
+          <Reviews gigId = {id}/>
+
         </div>
         <div className="right">
           <div className="gig-page-container">
@@ -152,27 +149,16 @@ const Gig = () => {
               </div>
 
               </div>
+
               <ul className='gig-sidebar-features'>
-                <li>
+                {
+                data.features.map((feature) => (
+                  <li key={feature}>
                   <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
-                  <span>Prompt writing</span>
+                  <span>{feature}</span>
                 </li>
-                <li>
-                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
-                  <span>Prompt delivery</span>
-                </li>
-                <li>
-                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
-                  <span>Generated image examples</span>
-                </li>
-                <li>
-                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
-                  <span>Artwork delivery</span>
-                </li>
-                <li>
-                  <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="" />
-                  <span>Image upscaling</span>
-                </li>
+                ))
+                }
               </ul>
             </div>
             <button className='gig-page-sidebar-details-button'>Continue</button>
