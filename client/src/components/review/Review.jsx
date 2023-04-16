@@ -1,7 +1,12 @@
 import React from 'react'
 import "./Review.scss"
+// import { useQuery } from '@tanstack/react-query';
+// import newRequest from '../../utils/newRequest';
 
-const Review = () => {
+const Review = ( {review} ) => {
+
+  console.log("içinde ne var");
+  console.log(review);
   return (
     <div className="gig-page-review">
               <div className="gig-page-reviews-item">
@@ -25,9 +30,7 @@ const Review = () => {
                   <span className='gig-page-seperate'>|</span>
                   <span className='gig-page-reviews-date'>1 week ago</span>
                 </div>
-                <p>Working with Jason was something incredible,
-                  it's like he got inside my head and perfectly understood what I wanted.
-                  Work done to perfection, a true PROFESSIONAL</p>
+                <p>{review.desc}</p>
                   <div className="gig-page-reviews-helpful">
                     <span>Helpful?</span>
                     <span>Yes</span>

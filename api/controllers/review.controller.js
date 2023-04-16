@@ -30,7 +30,7 @@ import Gig from "../models/gig.model.js"
 
     export const getReviews = async (req,res,next) => {
         try {
-            const reviews = await Review.find( { gigId: req.body.gigId } );
+            const reviews = await Review.find( { gigId: req.params.id } );
             res.status(201).send(reviews);
         } catch (error) {
             next(createError(403,"Reviews does not found!"));
