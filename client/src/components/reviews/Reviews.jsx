@@ -15,8 +15,7 @@ const Reviews = ({gigId}) => {
       }),
   });
 
-  console.log("aşağıda");
-  console.log(data);
+  // console.log(data);
 
   return (
      
