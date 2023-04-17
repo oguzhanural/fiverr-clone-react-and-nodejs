@@ -8,7 +8,7 @@ const orderSchema = new Schema({
      },
      img: {
         type: String,
-        required: true,
+        required: false,
      },
      title: { 
         type: String,
@@ -31,8 +31,8 @@ const orderSchema = new Schema({
         default: false,
      },
      payment_intent: {
-        type: Boolean,
-        default: false,
+        type: String,
+        required: true,
      },
 },{
     timestamps: true

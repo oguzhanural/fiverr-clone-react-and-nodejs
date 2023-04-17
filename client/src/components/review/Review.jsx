@@ -4,9 +4,6 @@ import "./Review.scss"
 // import newRequest from '../../utils/newRequest';
 
 const Review = ( {review} ) => {
-
-  console.log("içinde ne var");
-  console.log(review);
   return (
     <div className="gig-page-review">
               <div className="gig-page-reviews-item">
