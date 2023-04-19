@@ -19,7 +19,7 @@
           return res.data;
         }),
     });
-    console.log(data);
+    // console.log(data);
 
     const mutation = useMutation({
       mutationFn: (id) =>{
@@ -62,7 +62,11 @@
                 <td> <Link to="/message/123" className='link'>{conversation?.lastMessage?.substring(0,100)}...</Link></td>
                 <td>{moment(conversation.updatedAt).fromNow()}</td>
                 <td>
-                  <button className='message-read-button' onClick={()=>handleRead(conversation.id)}>Mark as Read</button>
+                  {((currentUser.isSeller && !conversation.readBySeller) || 
+                  (!currentUser.isSeller && !conversation.readByBuyer))
+                  &&(
+                    <button className='message-read-button' onClick={()=>handleRead(conversation.id)}>Mark as Read</button>
+                    )}
                 </td>
               </tr>  
               ))}
