@@ -1,5 +1,5 @@
   import React from 'react'
-  import { Link } from 'react-router-dom'
+  import { Link, useParams } from 'react-router-dom'
   import "./Messages.scss"
   import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
   import newRequest from '../../utils/newRequest';
@@ -19,6 +19,8 @@
           return res.data;
         }),
     });
+
+    
     // console.log(data);
 
     const mutation = useMutation({
@@ -59,7 +61,7 @@
                 <td>
                 {currentUser.isSeller? conversation.buyerId : conversation.sellerId}
                 </td>
-                <td> <Link to="/message/123" className='link'>{conversation?.lastMessage?.substring(0,100)}...</Link></td>
+                <td> <Link to={`/message/${conversation.id}`} className='link'>{conversation?.lastMessage?.substring(0,100)}...</Link></td>
                 <td>{moment(conversation.updatedAt).fromNow()}</td>
                 <td>
                   {((currentUser.isSeller && !conversation.readBySeller) || 
