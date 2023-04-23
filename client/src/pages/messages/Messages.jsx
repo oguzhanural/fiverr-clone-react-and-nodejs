@@ -61,7 +61,7 @@
                 <td>
                 {currentUser.isSeller? conversation.buyerId : conversation.sellerId}
                 </td>
-                <td> <Link to={`/message/${conversation.id}`} className='link'>{console.log(conversation)}...</Link></td>
+                <td> <Link to={`/message/${conversation.id}`} className='link'>{conversation?.lastMessage?.substring(0,100)}...</Link></td>
                 <td>{moment(conversation.updatedAt).fromNow()}</td>
                 <td>
                   {((currentUser.isSeller && !conversation.readBySeller) || 
