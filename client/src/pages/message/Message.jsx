@@ -20,6 +20,7 @@ const Message = () => {
         return res.data;
       }),
   });
+  // console.log(data);
 
   const mutation = useMutation({
     mutationFn: (message) =>{
