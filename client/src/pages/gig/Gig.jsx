@@ -1,7 +1,7 @@
 import React from 'react'
 import GigSlider from '../../components/gigSlider/GigSlider'
 // import Slide from '../../components/Slide/Slide'
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "./Gig.scss"
 import { useQuery } from '@tanstack/react-query'
 import newRequest from '../../utils/newRequest'
@@ -166,9 +166,11 @@ const Gig = () => {
                 }
               </ul>
             </div>
-            <button className='gig-page-sidebar-details-button'>Continue</button>
+            <Link to={`/pay/${id}`}>
+              <button className='gig-page-sidebar-details-button'>Continue</button>
+
+            </Link>
           </div>
-          
         </div>
       </div>
       }
