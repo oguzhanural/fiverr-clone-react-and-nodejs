@@ -20,7 +20,8 @@ const Orders = () => {
         return res.data;
       }),
   });
-
+  console.log(data);
+  
   const handleContact = async(order) => {
      const sellerId = order.sellerId;
      const buyerId = order.buyerId;

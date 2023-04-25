@@ -73,3 +73,25 @@ export const intent = async (req, res, next) => {
     });
 
 };
+
+export const confirm = async(req, res, next) => {
+    try {
+        const orders = Order.findOneAndUpdate(
+            {
+            payment_intent: req.body.payment_intent,
+
+            },
+
+            {
+                $set: {
+                    isCompleted: true,
+                }
+            }
+        );
+
+        res.status(200).send("Orders has been confirmed"); 
+
+    } catch (error) {
+        next(error);
+    }
+};
