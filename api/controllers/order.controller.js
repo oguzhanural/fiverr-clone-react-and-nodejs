@@ -76,12 +76,7 @@ export const intent = async (req, res, next) => {
 
 export const confirm = async(req, res, next) => {
     try {
-        const orders = Order.findOneAndUpdate(
-            {
-            payment_intent: req.body.payment_intent,
-
-            },
-
+        const orders = Order.findOneAndUpdate({payment_intent: req.body.payment_intent},
             {
                 $set: {
                     isCompleted: true,
@@ -89,7 +84,7 @@ export const confirm = async(req, res, next) => {
             }
         );
 
-        res.status(200).send("Orders has been confirmed"); 
+        res.status(200).send(orders); 
 
     } catch (error) {
         next(error);
