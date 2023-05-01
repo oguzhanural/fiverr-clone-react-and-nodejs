@@ -15,11 +15,12 @@ const MyGigs = () => {
     queryKey: ['myGigs'],
     queryFn: () => 
       newRequest.get(
-        `/gigs?userId=${currentUser.id}`)
+        `/gigs?userId=${currentUser._id}`)
         .then((res)=>{
         return res.data;
       }),
   });
+  console.log(data);
 
   const mutation = useMutation({
     mutationFn: (id) => {
