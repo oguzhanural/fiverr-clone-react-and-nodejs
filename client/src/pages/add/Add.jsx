@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useReducer, useState } from 'react'
 import "./Add.scss"
+import { INITIAL_STATE, reducer } from '../../reducers/gigReducers'
 
 const Add = () => {
+  
+  const [singleFile, setSingleFile] = useState(undefined);
+  const [files, setFiles] = useState([]);
+  const [uploading, setUploading] = useState(false); // when uploading start, it's gonna be true.
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+
+  const handleChange = () => {
+    
+  }
+
+
   return (
     <div className='add-page'>
       <div className="add-page-container">
@@ -14,7 +26,7 @@ const Add = () => {
             <input type="text"  placeholder='I will do something I am really good at'/>
             <label htmlFor="">Category</label>
 
-            <select name="cats" id="cats">
+            <select name="cat" id="cat" onChange={handleChange}>
               <option value="design">Design</option>
               <option value="webdevelopment">Web Development</option>
               <option value="animation">Animation</option>
