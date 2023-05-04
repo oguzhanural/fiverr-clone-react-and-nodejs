@@ -1,4 +1,3 @@
-import { r } from "tar";
 
 export const INITIAL_STATE = {
     userId: JSON.parse(localStorage.getItem("currentUser"))?._id,
@@ -18,7 +17,7 @@ export const INITIAL_STATE = {
 
 export const reducer  = (state, action) => {
     switch(action.type) {
-        
+
         case "CHANGE_INPUT":
             return {
                 ...state,
