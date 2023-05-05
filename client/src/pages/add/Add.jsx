@@ -2,10 +2,13 @@ import React, { useReducer, useState } from 'react'
 import "./Add.scss"
 import { INITIAL_STATE, reducer } from '../../reducers/gigReducers'
 import upload from "../../utils/upload"
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import newRequest from '../../utils/newRequest';
+import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
   
-  const [singleFile, setSingleFile] = useState(undefined);
+  const [singleFile, setSingleFile] = useState("");
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false); // when uploading start, it's gonna be true.
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
@@ -35,6 +38,7 @@ const Add = () => {
    setUploading(true); // when we get start the process it's gonna be true
    try {
     const cover = await upload(singleFile);
+    // console.log(cover);
 
     // [...files] şeklinde filelist'i array olarak alıyoruz
     const images = await Promise.all(
@@ -44,12 +48,35 @@ const Add = () => {
       })
     );
     setUploading(false);
-    dispatch({type: ""}); // artık gig yaratılabilir.
+    dispatch({type: "ADD_IMAGES", payload: { coverImg: cover, images: images } }); // artık gig yaratılabilir.
+    // payload da gönderdiğimiz property'ler INITIAL_STATE'in içinde ki property isimleri ile aynı olmalı.
    } catch (error) {
     console.log(error);
    }
   };
+  // console.log(state);
+  // console.log(singleFile);
+  
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
+  const mutation = useMutation({
+    mutationFn: (gig) =>{
+      return newRequest.post(`/gigs`, gig); 
+    }, 
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['myGigs'] })
+    },
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutation.mutate(state);
+    navigate("myGigs");
+
+  };
+ 
 
   return (
     <div className='add-page'>
@@ -73,17 +100,24 @@ const Add = () => {
               <option value="voiceover">Voice Over</option>
             </select>
 
-            <label htmlFor="">Cover Image</label>
-            <input type="file" name="" id="" onChange={e => setSingleFile(e.target.files[0])}/>
-            <label htmlFor="">Upload Images</label>
-            <input type="file" multiple name="" id="" onChange={e => setFiles(e.target.files)} />
+            <div className="images">
+              <div className="imagesInput">
+                <label htmlFor="">Cover Image</label>
+                <input type="file" name="" id="" onChange={e => setSingleFile(e.target.files[0])}/>
+                
+                <label htmlFor="">Upload Images</label>
+                <input type="file" multiple name="" id="" onChange={e => setFiles(e.target.files)} />
+              </div>
+              <button onClick={handleUpload}>{uploading ? "Uploading..." : "Upload"}</button>
+            </div>
+            
             <label htmlFor="">Description</label>
             
             <textarea name="desc" id="" cols="30" rows="16"
             placeholder='Brief descriptions to introduce your service to customers'
             onChange={handleChange}
             ></textarea>
-            <button>Create</button>
+            <button onClick={e => handleSubmit(e)}>Create</button>
           </div>
           
           <div className="add-page-right">
@@ -103,14 +137,23 @@ const Add = () => {
             <input type="text" name='revisionNumber' min={1} onChange={handleChange}/>
 
             <label htmlFor="">Add Features</label>
-            <form action="" onSubmit={handleFeature}> 
-              <input type="text" placeholder='e.g. page design' />
-              <button type="submit">add</button>
-            </form> 
+            <form action="" className='add-features' onSubmit={handleFeature}> 
+              <input type="text" className='add-input' placeholder='e.g. page design' />
+              <button type="submit">Add</button>
+            </form>
+            <div className="addedFeatures">
+            {Array.isArray(state?.features) && state.features.map((feature) => (
+              <div className="createdItem" key={feature}>
+                <button onClick={()=>dispatch({type: "REMOVE_FEATURE", payload: feature})}>
+                  {feature}
+                  <span>X</span>
+                </button>
+              </div> 
+            ))}
+            </div>
             
             <label htmlFor="">Price</label>
             <input type="text" name='price' min={1} onChange={handleChange}/>
-
 
           </div>
         </div>

@@ -8,19 +8,19 @@ const gigSchema = new Schema({
     },
     username: {
         type: String,
-        required: true,
+        required: false,
     },
     img: {
         type: String,
-        required: true,
+        required: false,
     },
     pp: {
         type: String,
-        required: true,
+        required: false,
     },
     star: {
         type: Number,
-        required: true,
+        required: false,
     },
     title: {
         type: String,
@@ -40,7 +40,7 @@ const gigSchema = new Schema({
     },
     cat: {
         type: String,
-        required: true,
+        required: false,
     },
     coverImg: {
         type: String,

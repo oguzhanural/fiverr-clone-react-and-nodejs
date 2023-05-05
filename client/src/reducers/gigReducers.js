@@ -1,6 +1,7 @@
 
 export const INITIAL_STATE = {
     userId: JSON.parse(localStorage.getItem("currentUser"))?._id,
+    username: "",
     title: "",
     cat: "",
     coverImg: "",
@@ -10,7 +11,7 @@ export const INITIAL_STATE = {
     shortDesc: "",
     deliveryTime: "",
     revisionNumber: "",
-    features: "",
+    features: [],
     price: 0
 };
 
@@ -32,7 +33,7 @@ export const reducer  = (state, action) => {
         case "ADD_FEATURE":
             return{
                     ...state,
-                    features: [...state.feature, action.payload]
+                    features: [...state.features, action.payload]
             };
         case "REMOVE_FEATURE":
             return {
