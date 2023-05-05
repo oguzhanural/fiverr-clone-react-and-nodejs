@@ -13,6 +13,9 @@ const Add = () => {
   const [uploading, setUploading] = useState(false); // when uploading start, it's gonna be true.
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
+  // MODEL DOSYASINDA GEREKLİ OLAN BAZI KISIMLAR CLIENT TARAFINDA ALINAMADIĞI İÇİN GEREKLİLİKLERİ
+  // TRUE'DAN FALSE ÇEVRİLMİŞTİR. DAHA SONRA O KISIMLARI DÜZELTECEĞİM.
+  // örneğin username, currentUser'dan alınmalı, kategori yine kullanıcının seçtiği select'den alınmalı vb.
   const handleChange = (e) => {
     dispatch(
     { 
